@@ -111,47 +111,46 @@
 
 <script>
 
-calcular = function(){
+    calcular = function () {
 
-    const operacao = document.getElementById('operacao').value;
-    const numeroUm = parseFloat(document.getElementById('numeroUm').value);
-    const numeroDois = parseFloat(document.getElementById('numeroDois').value);
+        const operacao = document.getElementById('operacao').value;
+        const numeroUm = parseFloat(document.getElementById('numeroUm').value);
+        const numeroDois = parseFloat(document.getElementById('numeroDois').value);
 
-    let resultado = 0;
-    let erro = '';
+        let resultado = 0;
+        let erro = '';
 
-    console.log(operacao, numeroUm, numeroDois);
-    console.log(typeof operacao, typeof numeroUm, typeof numeroDois);
+        console.log(operacao, numeroUm, numeroDois);
+        console.log(typeof operacao, typeof numeroUm, typeof numeroDois);
 
-    if(operacao == "+"){
-        resultado = numeroUm + numeroDois;
-    } else if (operacao == "-"){
-        resultado = numeroUm - numeroDois;
-    }
-    else if (operacao == "*"){
-        resultado = numeroUm * numeroDois;
-    }
-    else if (operacao == "/"){
-        if(numeroDois == 0){
-         resultado = 0;
-         erro = 'Não pode dividir por 0';
+        if (operacao == "+") {
+            resultado = numeroUm + numeroDois;
+        } else if (operacao == "-") {
+            resultado = numeroUm - numeroDois;
         }
-        else{
-            resultado = numeroUm / numeroDois;
+        else if (operacao == "*") {
+            resultado = numeroUm * numeroDois;
         }
+        else if (operacao == "/") {
+            if (numeroDois == 0) {
+                resultado = 0;
+                erro = 'Não pode dividir por 0';
+            }
+            else {
+                resultado = numeroUm / numeroDois;
+            }
+        }
+        else {
+            resultado = 0;
+            erro = 'O operador é inválido, digite uma das opçoes: + - / *';
+        }
+
+        let mensagemDeResultado = document.getElementById('mensagemDeResultado').textContent = resultado;
+        let mensagemDeErro = document.getElementById('mensagemDeErro').textContent = erro;
+
+        console.log(resultado);
+        console.log(mensagemDeErro);
+
     }
-    else {
-        resultado = 0;
-        erro = 'O operador é inválido, digite uma das opçoes: + - / *';
-    }
 
-    let mensagemDeResultado = document.getElementById('mensagemDeResultado').textContent = resultado;
-    let mensagemDeErro = document.getElementById('mensagemDeErro').textContent = erro;
-
-    console.log(resultado);
-    console.log(mensagemDeErro);
-
-}
-
-   
 </script>
